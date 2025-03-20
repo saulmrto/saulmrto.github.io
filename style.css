@@ -3,5 +3,9 @@ header h1 {
 }
 
 header h2 {
-    color: rgb(104, 104, 104);
+    color: gray;
+}
+
+#copyright-footer {
+    color: gray;
 }
