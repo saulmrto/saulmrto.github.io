@@ -1,11 +1,19 @@
-header h1 {
+.header h1 {
     margin-bottom: -22px;
+    color: black;
 }
 
-header h2 {
+.header h2 {
+    color: white;
+}
+
+.footer h4 {
     color: gray;
 }
 
-#copyright-footer {
-    color: gray;
+.header {
+    background: grey;
+    padding: 10px;
+    border-style: solid;
+    text-align: center;
 }
