@@ -1,161 +1,169 @@
-/* Global Styles */
+/* Reseteo básico y fuente principal */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden; /* Previene el scroll */
-    font-family: 'Arial', sans-serif; /* Fuente profesional y común */
-    color: #333; /* Color de texto por defecto */
+    overflow: hidden; 
+    font-family: 'Arial', sans-serif; 
+    color: #333; 
 }
 
-/* Header Styles */
+/* Estilos del encabezado fijo */
 header {
-    position: fixed; /* Se mantiene fijo en la parte superior */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px 20px; /* Ajustado para espacio lateral */
+    padding: 15px 20px; 
     z-index: 1000;
     box-sizing: border-box;
-    display: flex; /* Usar flexbox */
-    justify-content: center; /* Centra el elemento nav principal */
+    display: flex; 
+    justify-content: center; 
     align-items: center;
-    position: relative; /* Necesario para posicionar absolutamente el botón de idioma */
+    position: relative; 
 }
 
+/* Navegación principal dentro del header */
 header nav {
-    /* Ya no necesita ser flex ni crecer, el header se encarga de centrarlo */
-    /* El ul interno se centrará con text-align */
+    /* El header se encarga de centrar este bloque */
 }
 
+/* Lista de enlaces de navegación */
 header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center; /* Centra los elementos de la lista (los enlaces) */
+    text-align: center; 
 }
 
+/* Elementos de la lista de navegación (enlaces) */
 header nav ul li {
-    display: inline-block; /* Coloca los elementos en línea */
-    margin: 0 20px; /* Espacio entre los enlaces */
+    display: inline-block; 
+    margin: 0 20px; 
 }
 
+/* Estilo de los enlaces de navegación */
 header nav ul li a {
     text-decoration: none;
-    color: white; /* Color de los enlaces para visibilidad sobre header oscuro */
+    color: white; 
     font-size: 1.2em;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #cccccc; /* Color más claro al pasar el mouse */
+    color: #cccccc; 
 }
 
-/* Page Section Base Styles */
+/* Estructura base para cada sección de página completa */
 .page-section {
-    height: 100vh; /* Altura completa del viewport */
-    width: 100vw; /* Ancho completo del viewport */
-    position: fixed; /* Se superponen y ocupan toda la pantalla */
+    height: 100vh; 
+    width: 100vw; 
+    position: fixed; 
     top: 0;
     left: 0;
-    display: none; /* Ocultas por defecto */
+    display: none; /* Ocultar por defecto, se muestran con JS */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    overflow: hidden; /* Previene scroll dentro de la sección */
-    z-index: 50; /* Debajo del header pero visibles cuando están activas */
+    overflow: hidden; 
+    z-index: 50; /* Detrás del header */
 }
 
+/* Clase para mostrar la sección activa */
 .page-section.active-section {
-    display: flex; /* Muestra la sección activa */
+    display: flex; 
 }
 
-/* Inicio Section Specifics */
+/* Sección de Inicio */
 section#inicio {
-    /* Reemplaza la URL con la ruta a tu imagen de fondo */
     background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
-    background-size: cover; /* Cubre todo el área disponible */
-    background-position: center center; /* Centra la imagen */
+    background-size: cover; 
+    background-position: center center; 
     background-repeat: no-repeat;
-    display: flex; /* Habilita Flexbox */
-    flex-direction: column; /* Organiza los hijos en columna */
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */    
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;    
 }
 
+/* Contenedor de la presentación en Inicio */
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el texto con más opacidad, similar al header */
+    background-color: rgba(0, 0, 0, 0.7); 
     padding: 30px 40px;
     border-radius: 10px;
-    max-width: 800px; /* Ancho máximo para el contenido de texto */
+    max-width: 800px; 
 }
 
+/* Título principal en Inicio */
 .hero-content h1 {
     font-size: 3em;
-    color: white; /* Color blanco para el título */
+    color: white; 
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
 }
 
+/* Párrafo de presentación en Inicio */
 .hero-content p {
     font-size: 1.5em;
-    color: #f0f0f0; /* Color claro para el párrafo */
+    color: #f0f0f0; 
     line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
 }
 
-/* Proyectos Section Styles */
+/* Sección de Proyectos */
 section#proyectos {
-    /* Aplicamos el mismo fondo que la sección de inicio */
     background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    color: #f0f0f0; /* Color de texto claro por defecto para esta sección */
-    padding-top: 70px; /* Espacio para el header fijo, ajustar si la altura del header cambia */
-    justify-content: center; /* Centra el contenido verticalmente en el espacio disponible */
-    align-items: center; /* Asegura el centrado horizontal del .section-content */
+    color: #f0f0f0; 
+    padding-top: 70px; /* Espacio para el header */
+    justify-content: center; 
+    align-items: center; 
 }
 
-.section-content { /* Contenedor para el contenido de las secciones Proyectos y Contacto */
-    /* Hacemos que este cuadro tenga la misma opacidad/estilo que .hero-content */
+/* Contenedor general para el contenido de Proyectos y Contacto */
+.section-content { 
     background-color: rgba(0, 0, 0, 0.7); 
     border-radius: 10px;
     max-width: 1000px;
     width: 90%;
     padding: 20px;
-    overflow-y: auto; /* Permite scroll si el contenido de proyectos es muy largo */
-    max-height: calc(100vh - 70px); /* Altura máxima menos el padding del header */
-    box-sizing: border-box; /* Para incluir padding y border en el width/height total */
+    overflow-y: auto; /* Scroll si el contenido es largo */
+    max-height: calc(100vh - 70px); /* Altura máxima menos el header */
+    box-sizing: border-box; 
 }
 
+/* Títulos para las secciones Proyectos y Contacto */
 section#proyectos h2, section#contacto h2 {
     font-size: 2.8em;
-    margin-bottom: 30px; /* Ajuste ligero del margen */
-    color: white; /* Color blanco para los títulos de sección */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+    margin-bottom: 30px; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
 }
 
+/* Grid para las tarjetas de proyecto */
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Espacio entre tarjetas */
+    gap: 30px; 
 }
 
+/* Tarjeta individual de proyecto */
 .project-card {
-    /* Las tarjetas de proyecto mantienen su fondo blanco para contrastar */
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente, un poco menos opaco que el .section-content para diferenciarse */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Un borde sutil para definir la tarjeta */    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 25px;
-    width: calc(50% - 45px); /* Dos tarjetas por fila, ajustando por el gap */
-    min-width: 280px; /* Ancho mínimo para tarjetas en pantallas pequeñas */
+    width: calc(50% - 45px); /* Dos por fila en escritorio */
+    min-width: 280px; 
     box-sizing: border-box;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -166,23 +174,26 @@ section#proyectos h2, section#contacto h2 {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Título dentro de la tarjeta de proyecto */
 .project-card h3 {
     font-size: 1.6em;
-    color: #85c1e9; /* Un azul claro para buena legibilidad sobre fondo oscuro/transparente */
+    color: #85c1e9; 
     margin-top: 0;
     margin-bottom: 15px;
 }
 
+/* Descripción dentro de la tarjeta de proyecto */
 .project-card p {
     font-size: 1em;
     line-height: 1.6;
-    color: #e0e0e0; /* Un color gris claro para el texto del párrafo */
+    color: #e0e0e0; 
     margin-bottom: 20px;
 }
 
+/* Enlace/botón en la tarjeta de proyecto */
 .project-link {
     display: inline-block;
-    background-color: #5dade2; /* Azul claro, similar al de los enlaces de contacto */
+    background-color: #5dade2; 
     color: white;
     padding: 12px 20px;
     text-decoration: none;
@@ -190,33 +201,33 @@ section#proyectos h2, section#contacto h2 {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
-
 .project-link:hover {
-    background-color: #4a90e2; /* Un azul un poco más intenso al pasar el mouse */
+    background-color: #4a90e2; 
 }
 
-/* Contacto Section Styles (Placeholder) */
+/* Sección de Contacto */
 section#contacto {
-    /* Aplicamos el mismo fondo que la sección de inicio */
     background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    color: #f0f0f0; /* Color de texto claro por defecto para esta sección */
-    padding-top: 70px; /* Espacio para el header fijo */
-    justify-content: center; /* Centra el contenido verticalmente en el espacio disponible */
-    align-items: center; /* Asegura el centrado horizontal del .section-content */
+    color: #f0f0f0; 
+    padding-top: 70px; /* Espacio para el header */
+    justify-content: center; 
+    align-items: center; 
 }
 
+/* Párrafos en la sección de Contacto */
 section#contacto p {
     font-size: 1.2em;
     line-height: 1.7;
-    color: #f0f0f0; /* Aseguramos que el texto del párrafo sea claro */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+    color: #f0f0f0; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
 }
 
+/* Enlaces en la sección de Contacto */
 section#contacto a {
-    color: #5dade2; /* Un azul más claro y brillante para mejor visibilidad */
+    color: #5dade2; 
     text-decoration: none;
 }
 
@@ -224,31 +235,15 @@ section#contacto a:hover {
     color: #85c1e9; /* Un azul aún más claro al pasar el mouse */
 }
 
-/* Responsive adjustments for project cards */
-@media (max-width: 768px) {
-    .project-card {
-        width: calc(100% - 30px); /* Una tarjeta por fila en pantallas más pequeñas */
-        margin-bottom: 20px;
-    }
-    section#proyectos h2, section#contacto h2 {
-        font-size: 2.2em;
-    }
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    .hero-content p {
-        font-size: 1.2em;
-    }
-}
-
-/* Language Switcher Styles */
+/* Botón de cambio de idioma (Escritorio) */
 .lang-switcher {
     position: absolute;
-    right: 20px; /* Alineado con el padding derecho del header */
+    right: 20px; 
     top: 50%;
-    transform: translateY(-50%); /* Para centrar verticalmente el botón */
+    transform: translateY(-50%); 
 }
 
+/* Estilo del botón de idioma */
 .lang-switcher button {
     background-color: transparent;
     color: white;
@@ -257,11 +252,103 @@ section#contacto a:hover {
     cursor: pointer;
     font-weight: bold;
     border-radius: 3px;
-    font-size: 0.9em; /* Un poco más pequeño para que encaje bien */
+    font-size: 0.9em; 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .lang-switcher button:hover {
     background-color: white;
     color: black;
+}
+
+/* Ajustes para móviles (pantallas de 768px o menos) */
+@media (max-width: 768px) {
+    /* Header en móviles */
+    header {
+        padding: 10px 15px; 
+    }
+    /* Navegación en móviles */
+    header nav {
+        margin-bottom: 0; 
+        width: 100%; 
+    }
+    /* Elementos de navegación en móviles */
+    header nav ul li {
+        margin: 0 10px; 
+    }
+    /* Enlaces de navegación en móviles */
+    header nav ul li a {
+        font-size: 1em; 
+    }
+
+    /* Botón de idioma como footer fijo en móviles */
+    .lang-switcher {
+        position: fixed;    
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85); 
+        padding: 8px 0;     
+        text-align: center; 
+        z-index: 999;       /* Importante: debajo del header */
+        transform: none;    
+        top: auto;          
+        right: auto;        
+    }
+    /* Botón de idioma en móviles */
+    .lang-switcher button {
+        font-size: 0.8em; 
+        padding: 4px 8px;
+    }
+
+    /* Contenido de Inicio en móviles */
+    .hero-content {
+        padding: 20px; 
+        width: 90%; 
+    }
+    /* Título principal en móviles */
+    .hero-content h1 {
+        font-size: 2.2em; 
+    }
+    /* Párrafo de presentación en móviles */
+    .hero-content p {
+        font-size: 1.1em; 
+    }
+
+    /* Contenedor de sección en móviles, ajustar altura por header y footer fijos */
+    .section-content {
+        padding: 15px; 
+        max-height: calc(100vh - 36px - 40px); /* (Altura header) - (Altura footer) */
+    }
+
+    /* Títulos de sección en móviles */
+    section#proyectos h2, section#contacto h2 {
+        font-size: 2em; 
+        margin-bottom: 20px;
+    }
+
+    /* Tarjetas de proyecto en móviles (una por fila) */
+    .project-card {
+        width: calc(100% - 30px); 
+        margin-bottom: 20px;
+        padding: 15px; 
+    }
+    /* Título en tarjeta de proyecto (móviles) */
+    .project-card h3 {
+        font-size: 1.3em;
+    }
+    /* Párrafo en tarjeta de proyecto (móviles) */
+    .project-card p {
+        font-size: 0.95em;
+    }
+    /* Enlace en tarjeta de proyecto (móviles) */
+    .project-link {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Párrafo en sección de Contacto (móviles) */
+    section#contacto p {
+        font-size: 1em;
+    }
 }

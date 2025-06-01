@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saúl Morato - Portafolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para diseño responsivo -->
+    <title>Saúl Morato - Portafolio</title> <!-- Título de la pestaña -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos -->
 </head>
 <body>
-    <header>
+    <header> <!-- Encabezado principal -->
         <nav>
             <ul>
                 <li><a href="#inicio" data-translate-key="navInicio">Inicio</a></li>
@@ -16,37 +16,37 @@
             </ul>
         </nav>
         <div class="lang-switcher">
-            <button id="lang-toggle-btn" data-translate-key="langBtn">Change to English</button>
+            <button id="lang-toggle-btn" data-translate-key="langBtn">Change to English</button> <!-- Botón para cambiar idioma -->
         </div>
     </header>
 
-    <section id="inicio" class="page-section">
+    <section id="inicio" class="page-section"> <!-- Sección: Inicio -->
         <div class="hero-content">
             <h1 data-translate-key="heroTitle">Saúl Morato</h1>
             <p data-translate-key="heroText">¡Hola! Soy Saúl Morato. Me apasiona el desarrollo backend y mi misión es convertirme en un desarrollador Full Stack, creando soluciones tecnológicas completas y eficientes.</p>
         </div>
     </section>
 
-    <section id="proyectos" class="page-section">
+    <section id="proyectos" class="page-section"> <!-- Sección: Proyectos -->
         <div class="section-content">
             <h2 data-translate-key="projectsTitle">Mis Proyectos</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card"> <!-- Tarjeta de Proyecto 1 -->
                     <h3 data-translate-key="project1Title">POP3 Mail Downloader</h3>
                     <p data-translate-key="project1Desc">Una herramienta desarrollada en Python para descargar correos electrónicos desde servidores POP3, ideal para backups o procesamiento local.</p>
                     <a href="https://github.com/saulmrto/pop3mail-downloader" target="_blank" rel="noopener noreferrer" class="project-link" data-translate-key="project1Link">Ver en GitHub</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card"> <!-- Tarjeta de Proyecto 2 -->
                     <h3 data-translate-key="project2Title">MailEML Viewer</h3>
                     <p data-translate-key="project2Desc">Una aplicación Python con interfaz gráfica (Tkinter) para visualizar el contenido de archivos de correo electrónico en formato .EML.</p>
                     <a href="https://github.com/saulmrto/maileml-viewer" target="_blank" rel="noopener noreferrer" class="project-link" data-translate-key="project2Link">Ver en GitHub</a>
                 </div>
-                <!-- Puedes añadir más project-card aquí -->
+                <!-- Aquí puedo añadir más tarjetas de proyectos si es necesario -->
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="page-section">
+    <section id="contacto" class="page-section"> <!-- Sección: Contacto -->
         <div class="section-content">
             <h2 data-translate-key="contactTitle">Contacto</h2>
             <p data-translate-key="contactText1">Puedes encontrarme en LinkedIn o enviarme un correo electrónico.</p>
@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <script>
+    <script> // Script para la navegación entre secciones y cambio de idioma
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('header nav ul li a');
             const pageSections = document.querySelectorAll('.page-section');
@@ -117,7 +117,7 @@
                 });
                 // Actualizar el texto del botón específicamente, ya que ahora también tiene una clave de traducción
                 if (translations[lang] && translations[lang].langBtn) {
-                    langToggleButton.textContent = translations[lang].langBtn;
+                    langToggleButton.textContent = translations[lang].langBtn; // Actualiza texto del botón de idioma
                 }
             }
 
