@@ -1,0 +1,233 @@
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Previene el scroll */
+    font-family: 'Arial', sans-serif; /* Fuente profesional y común */
+    color: #333; /* Color de texto por defecto */
+}
+
+/* Header Styles */
+header {
+    position: fixed; /* Se mantiene fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Negro semi-transparente con más opacidad */
+    padding: 15px 0;
+    z-index: 1000; /* Asegura que el header esté sobre otro contenido */
+    box-sizing: border-box;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centra los elementos de la lista (los enlaces) */
+}
+
+header nav ul li {
+    display: inline-block; /* Coloca los elementos en línea */
+    margin: 0 20px; /* Espacio entre los enlaces */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white; /* Color de los enlaces para visibilidad sobre header oscuro */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #cccccc; /* Color más claro al pasar el mouse */
+}
+
+/* Page Section Base Styles */
+.page-section {
+    height: 100vh; /* Altura completa del viewport */
+    width: 100vw; /* Ancho completo del viewport */
+    position: fixed; /* Se superponen y ocupan toda la pantalla */
+    top: 0;
+    left: 0;
+    display: none; /* Ocultas por defecto */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Previene scroll dentro de la sección */
+    z-index: 50; /* Debajo del header pero visibles cuando están activas */
+}
+
+.page-section.active-section {
+    display: flex; /* Muestra la sección activa */
+}
+
+/* Inicio Section Specifics */
+section#inicio {
+    /* Reemplaza la URL con la ruta a tu imagen de fondo */
+    background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+    background-size: cover; /* Cubre todo el área disponible */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat;
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Organiza los hijos en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */    
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el texto con más opacidad, similar al header */
+    padding: 30px 40px;
+    border-radius: 10px;
+    max-width: 800px; /* Ancho máximo para el contenido de texto */
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    color: white; /* Color blanco para el título */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    color: #f0f0f0; /* Color claro para el párrafo */
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+}
+
+/* Proyectos Section Styles */
+section#proyectos {
+    /* Aplicamos el mismo fondo que la sección de inicio */
+    background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #f0f0f0; /* Color de texto claro por defecto para esta sección */
+    padding-top: 70px; /* Espacio para el header fijo, ajustar si la altura del header cambia */
+    justify-content: center; /* Centra el contenido verticalmente en el espacio disponible */
+    align-items: center; /* Asegura el centrado horizontal del .section-content */
+}
+
+.section-content { /* Contenedor para el contenido de las secciones Proyectos y Contacto */
+    /* Hacemos que este cuadro tenga la misma opacidad/estilo que .hero-content */
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px;
+    max-width: 1000px;
+    width: 90%;
+    padding: 20px;
+    overflow-y: auto; /* Permite scroll si el contenido de proyectos es muy largo */
+    max-height: calc(100vh - 70px); /* Altura máxima menos el padding del header */
+    box-sizing: border-box; /* Para incluir padding y border en el width/height total */
+}
+
+section#proyectos h2, section#contacto h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px; /* Ajuste ligero del margen */
+    color: white; /* Color blanco para los títulos de sección */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Espacio entre tarjetas */
+}
+
+.project-card {
+    /* Las tarjetas de proyecto mantienen su fondo blanco para contrastar */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente, un poco menos opaco que el .section-content para diferenciarse */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Un borde sutil para definir la tarjeta */    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: calc(50% - 45px); /* Dos tarjetas por fila, ajustando por el gap */
+    min-width: 280px; /* Ancho mínimo para tarjetas en pantallas pequeñas */
+    box-sizing: border-box;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    font-size: 1.6em;
+    color: #85c1e9; /* Un azul claro para buena legibilidad sobre fondo oscuro/transparente */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #e0e0e0; /* Un color gris claro para el texto del párrafo */
+    margin-bottom: 20px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #5dade2; /* Azul claro, similar al de los enlaces de contacto */
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #4a90e2; /* Un azul un poco más intenso al pasar el mouse */
+}
+
+/* Contacto Section Styles (Placeholder) */
+section#contacto {
+    /* Aplicamos el mismo fondo que la sección de inicio */
+    background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #f0f0f0; /* Color de texto claro por defecto para esta sección */
+    padding-top: 70px; /* Espacio para el header fijo */
+    justify-content: center; /* Centra el contenido verticalmente en el espacio disponible */
+    align-items: center; /* Asegura el centrado horizontal del .section-content */
+}
+
+section#contacto p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #f0f0f0; /* Aseguramos que el texto del párrafo sea claro */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+}
+
+section#contacto a {
+    color: #5dade2; /* Un azul más claro y brillante para mejor visibilidad */
+    text-decoration: none;
+}
+
+section#contacto a:hover {
+    color: #85c1e9; /* Un azul aún más claro al pasar el mouse */
+}
+
+/* Responsive adjustments for project cards */
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(100% - 30px); /* Una tarjeta por fila en pantallas más pequeñas */
+        margin-bottom: 20px;
+    }
+    section#proyectos h2, section#contacto h2 {
+        font-size: 2.2em;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+}
