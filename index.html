@@ -10,33 +10,36 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" data-translate-key="navInicio">Inicio</a></li>
+                <li><a href="#proyectos" data-translate-key="navProyectos">Proyectos</a></li>
+                <li><a href="#contacto" data-translate-key="navContacto">Contacto</a></li>
             </ul>
         </nav>
+        <div class="lang-switcher">
+            <button id="lang-toggle-btn" data-translate-key="langBtn">Change to English</button>
+        </div>
     </header>
 
     <section id="inicio" class="page-section">
         <div class="hero-content">
-            <h1>Saúl Morato</h1>
-            <p>¡Hola! Soy Saúl Morato. Me apasiona el desarrollo backend y mi misión es convertirme en un desarrollador Full Stack, creando soluciones tecnológicas completas y eficientes.</p>
+            <h1 data-translate-key="heroTitle">Saúl Morato</h1>
+            <p data-translate-key="heroText">¡Hola! Soy Saúl Morato. Me apasiona el desarrollo backend y mi misión es convertirme en un desarrollador Full Stack, creando soluciones tecnológicas completas y eficientes.</p>
         </div>
     </section>
 
     <section id="proyectos" class="page-section">
         <div class="section-content">
-            <h2>Mis Proyectos</h2>
+            <h2 data-translate-key="projectsTitle">Mis Proyectos</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>POP3 Mail Downloader</h3>
-                    <p>Una herramienta desarrollada en Python para descargar correos electrónicos desde servidores POP3, ideal para backups o procesamiento local.</p>
-                    <a href="https://github.com/saulmrto/pop3mail-downloader" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
+                    <h3 data-translate-key="project1Title">POP3 Mail Downloader</h3>
+                    <p data-translate-key="project1Desc">Una herramienta desarrollada en Python para descargar correos electrónicos desde servidores POP3, ideal para backups o procesamiento local.</p>
+                    <a href="https://github.com/saulmrto/pop3mail-downloader" target="_blank" rel="noopener noreferrer" class="project-link" data-translate-key="project1Link">Ver en GitHub</a>
                 </div>
                 <div class="project-card">
-                    <h3>MailEML Viewer</h3>
-                    <p>Una aplicación Python con interfaz gráfica (Tkinter) para visualizar el contenido de archivos de correo electrónico en formato .EML.</p>
-                    <a href="https://github.com/saulmrto/maileml-viewer" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
+                    <h3 data-translate-key="project2Title">MailEML Viewer</h3>
+                    <p data-translate-key="project2Desc">Una aplicación Python con interfaz gráfica (Tkinter) para visualizar el contenido de archivos de correo electrónico en formato .EML.</p>
+                    <a href="https://github.com/saulmrto/maileml-viewer" target="_blank" rel="noopener noreferrer" class="project-link" data-translate-key="project2Link">Ver en GitHub</a>
                 </div>
                 <!-- Puedes añadir más project-card aquí -->
             </div>
@@ -45,9 +48,9 @@
 
     <section id="contacto" class="page-section">
         <div class="section-content">
-            <h2>Contacto</h2>
-            <p>Puedes encontrarme en LinkedIn o enviarme un correo electrónico.</p>
-            <p><a href="https://www.linkedin.com/in/saulmrto" target="_blank" rel="noopener noreferrer">LinkedIn: saulmrto</a></p>
+            <h2 data-translate-key="contactTitle">Contacto</h2>
+            <p data-translate-key="contactText1">Puedes encontrarme en LinkedIn o enviarme un correo electrónico.</p>
+            <p><a href="https://www.linkedin.com/in/saulmrto" target="_blank" rel="noopener noreferrer" data-translate-key="contactLinkText">LinkedIn: saulmrto</a></p>
             <!-- Ejemplo: <p>Puedes contactarme en <a href="mailto:tuemail@example.com">tuemail@example.com</a>.</p> -->
         </div>
     </section>
@@ -56,6 +59,67 @@
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('header nav ul li a');
             const pageSections = document.querySelectorAll('.page-section');
+
+            const translations = {
+                es: {
+                    pageTitle: "Saúl Morato - Portafolio",
+                    navInicio: "Inicio",
+                    navProyectos: "Proyectos",
+                    navContacto: "Contacto",
+                    heroTitle: "Saúl Morato",
+                    langBtn: "Change to English",
+                    heroText: "¡Hola! Soy Saúl Morato. Me apasiona el desarrollo backend y mi misión es convertirme en un desarrollador Full Stack, creando soluciones tecnológicas completas y eficientes.",
+                    projectsTitle: "Mis Proyectos",
+                    project1Title: "POP3 Mail Downloader",
+                    project1Desc: "Una herramienta desarrollada en Python para descargar correos electrónicos desde servidores POP3, ideal para backups o procesamiento local.",
+                    project1Link: "Ver en GitHub",
+                    project2Title: "MailEML Viewer",
+                    project2Desc: "Una aplicación Python con interfaz gráfica (Tkinter) para visualizar el contenido de archivos de correo electrónico en formato .EML.",
+                    project2Link: "Ver en GitHub",
+                    contactTitle: "Contacto",
+                    contactText1: "Puedes encontrarme en LinkedIn o enviarme un correo electrónico.",
+                    contactLinkText: "LinkedIn: saulmrto"
+                },
+                en: {
+                    pageTitle: "Saúl Morato - Portfolio",
+                    navInicio: "Home",
+                    navProyectos: "Projects",
+                    navContacto: "Contact",
+                    heroTitle: "Saúl Morato",
+                    langBtn: "Cambiar a Español",
+                    heroText: "Hi! I'm Saúl Morato. I'm passionate about backend development and my mission is to become a Full Stack developer, creating complete and efficient technological solutions.",
+                    projectsTitle: "My Projects",
+                    project1Title: "POP3 Mail Downloader",
+                    project1Desc: "A Python tool to download emails from POP3 servers, ideal for backups or local processing.",
+                    project1Link: "View on GitHub",
+                    project2Title: "MailEML Viewer",
+                    project2Desc: "A Python application with a graphical interface (Tkinter) to view the content of .EML email files.",
+                    project2Link: "View on GitHub",
+                    contactTitle: "Contact",
+                    contactText1: "You can find me on LinkedIn or send me an email.",
+                    contactLinkText: "LinkedIn: saulmrto"
+                }
+            };
+
+            let currentLang = 'es';
+            const langToggleButton = document.getElementById('lang-toggle-btn');
+
+            function applyTranslations(lang) {
+                document.documentElement.lang = lang;
+                if (translations[lang] && translations[lang].pageTitle) {
+                    document.title = translations[lang].pageTitle;
+                }
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.dataset.translateKey;
+                    if (translations[lang] && translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+                // Actualizar el texto del botón específicamente, ya que ahora también tiene una clave de traducción
+                if (translations[lang] && translations[lang].langBtn) {
+                    langToggleButton.textContent = translations[lang].langBtn;
+                }
+            }
 
             document.getElementById('inicio').classList.add('active-section'); // Activa la sección de inicio por defecto
 
@@ -67,6 +131,12 @@
                     document.getElementById(targetId).classList.add('active-section');
                 });
             });
+
+            langToggleButton.addEventListener('click', () => {
+                currentLang = (currentLang === 'es') ? 'en' : 'es';
+                applyTranslations(currentLang);
+            });
+            applyTranslations(currentLang); // Aplicar traducciones iniciales
         });
     </script>
 </body>

@@ -15,10 +15,19 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Negro semi-transparente con más opacidad */
-    padding: 15px 0;
-    z-index: 1000; /* Asegura que el header esté sobre otro contenido */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 20px; /* Ajustado para espacio lateral */
+    z-index: 1000;
     box-sizing: border-box;
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centra el elemento nav principal */
+    align-items: center;
+    position: relative; /* Necesario para posicionar absolutamente el botón de idioma */
+}
+
+header nav {
+    /* Ya no necesita ser flex ni crecer, el header se encarga de centrarlo */
+    /* El ul interno se centrará con text-align */
 }
 
 header nav ul {
@@ -230,4 +239,29 @@ section#contacto a:hover {
     .hero-content p {
         font-size: 1.2em;
     }
+}
+
+/* Language Switcher Styles */
+.lang-switcher {
+    position: absolute;
+    right: 20px; /* Alineado con el padding derecho del header */
+    top: 50%;
+    transform: translateY(-50%); /* Para centrar verticalmente el botón */
+}
+
+.lang-switcher button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 0.9em; /* Un poco más pequeño para que encaje bien */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-switcher button:hover {
+    background-color: white;
+    color: black;
 }
