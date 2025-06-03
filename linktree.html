@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúl Morato - Links</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Base font for the page */
+            /* Background image setup */
+            background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+            background-size: cover; /* Scale image to cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Avoid repeating the image */
+            background-attachment: fixed; /* Keep background static during scroll for a parallax effect */
+            /* Fallback color if the image fails to load or for a solid dark theme base */
+            background-color: #121212; /* Dark base color */
+            color: #e0e0e0; /* Default light text color for overall readability */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Added to vertically center the container */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: rgba(30, 30, 30, 0.85); /* Semi-transparent dark background for the content box */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Subtle shadow for depth on dark backgrounds */
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #555; /* Border for the profile picture, complementing the dark theme */
+        }
+        .name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #f0f0f0; /* Bright text color for the name to stand out */
+        }
+        .links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .links-list li {
+            margin-bottom: 15px;
+        }
+        .links-list a {
+            display: block;
+            background-color: #2c3e50; /* Default darker blue for links */
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+        }
+        .links-list a:hover {
+            background-color: #1a252f; /* Darken button color on hover */
+            transform: translateY(1px); /* Slight "press" effect on hover */
+        }
+        /* Custom styling for specific social media/link buttons */
+        .links-list a.github { background-color: #24292e; } /* GitHub brand-consistent dark color */
+        .links-list a.github:hover { background-color: #1b1f23; } /* Darker shade for GitHub button on hover */
+        .links-list a.linkedin { background-color: #004182; } /* Deep blue for LinkedIn button */
+        .links-list a.linkedin:hover { background-color: #002f5d; } /* Darker shade for LinkedIn button on hover */
+        .links-list a.portfolio { background-color: #1e8449; } /* Rich green for the portfolio link */
+        .links-list a.portfolio:hover { background-color: #145a32; } /* Darker shade for portfolio button on hover */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://github.com/saulmrto.png" alt="Saúl Morato Profile Picture" class="profile-pic">
+        <div class="name">Saúl Morato</div>
+        <ul class="links-list">
+            <li><a href="https://saulmrto.github.io" target="_blank" class="portfolio">Personal Portfolio</a></li>
+            <li><a href="https://github.com/saulmrto" target="_blank" class="github">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank" class="linkedin">LinkedIn</a></li>
+            <!-- Add more links as needed -->
+            <!-- Example: <li><a href="https://yourblog.com" target="_blank">Blog</a></li> -->
+        </ul>
+    </div>
+</body>
+</html>
