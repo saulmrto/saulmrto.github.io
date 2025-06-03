@@ -3,10 +3,10 @@
 Welcome! This repository contains the source code for my personal portfolio, hosted at [saulmrto.github.io](https://saulmrto.github.io).
 
 ## Overview
-
 This website has been designed as a non-scrollable Single Page Application (SPA), optimized for a smooth and direct user experience. The goal is to clearly and professionally present my profile, projects, and contact information.
+Additionally, a Linktree-style page is available to provide a centralized hub for important personal and professional links.
 
-The page is structured into the following main sections:
+The main portfolio page (`index.html`) is structured into the following main sections:
 
 *   **Home:** A brief introduction about myself, my interests in backend development, and my aspiration to become a Full Stack developer.
 *   **Projects:** A showcase of some of the projects I have worked on, with direct links to their GitHub repositories for more details.
