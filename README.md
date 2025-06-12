@@ -1,54 +1,49 @@
-# Saúl Morato's Personal Portfolio & Links
+# Saúl Morato - Personal Portfolio Website
 
-Welcome! This repository contains the source code for my personal portfolio and Linktree page, hosted on GitHub Pages.
+This repository contains the source code for my personal portfolio website, accessible at [saulmrto.is-a.dev](http://saulmrto.is-a.dev).
 
-## Overview
+The website is designed as a single-page application (SPA) to showcase my projects, skills, and provide ways to connect with me. It features internationalization (i18n) support, allowing content to be viewed in both Spanish and English.
 
-This project serves two main purposes:
+## Features
 
-1.  **Personal Portfolio (`index.html`):** A non-scrollable Single Page Application (SPA) designed for a smooth and direct user experience. It clearly and professionally presents my profile, projects, and contact information.
-2.  **Linktree Page (`linktree.html`):** A centralized hub for my important personal and professional links, offering quick access to my online presence.
+*   **Home Section:** A brief introduction, outlining my passion for backend development and my goal to become a Full Stack developer.
+*   **Projects Section:** Displays a collection of software projects, including:
+    *   **POP3 Mail Downloader:** A Python tool for downloading emails from POP3 servers.
+    *   **MailEML Viewer:** A Python application with a Tkinter GUI for viewing .EML email files.
+    *   Each project card links directly to its GitHub repository.
+*   **Contact Section:** Provides links to my LinkedIn profile and contact information.
+*   **Language Switcher:** Allows users to toggle the website's content between English and Spanish.
+*   **Links Page (`linktree.html`):** A supplementary page offering direct links to my portfolio, GitHub, and LinkedIn profiles.
+*   **Responsive Design:** The layout is optimized for various screen sizes, ensuring a consistent user experience on desktop and mobile devices.
 
-## Available Pages
+## Technologies Used
 
-### 1. Portfolio (`index.html`)
+*   **HTML5:** For the structure of the website.
+*   **CSS3:** For styling, including responsive design and layout management.
+*   **Vanilla JavaScript:** For implementing the single-page application navigation logic and the internationalization (i18n) feature.
+*   **GitHub Pages:** For hosting the website.
 
-The main portfolio page is structured into the following key sections:
+## Project Structure
 
-*   **Home:** A brief introduction about myself, my interests in backend development, and my aspiration to become a Full Stack developer.
-*   **Projects:** A showcase of some of the projects I have worked on, with direct links to their GitHub repositories for more details.
-*   **Contact:** Information for you to get in touch with me, including my LinkedIn profile.
+*   `index.html`: The main HTML file containing the structure and content for all sections of the portfolio. It also includes inline CSS and JavaScript.
+*   `linktree.html`: A simple HTML page designed as a "link-in-bio" style page, providing direct links to my portfolio, GitHub, and LinkedIn. It features a dark theme and a background image.
+*   `CNAME`: Specifies the custom domain `saulmrto.is-a.dev` for GitHub Pages.
 
-**Technical Features (Portfolio):**
+## Local Setup
 
-*   **Responsive Design:** Adapts to different screen sizes, including specific optimization for mobile devices.
-*   **Intuitive Navigation:** Smooth transitions between sections without page reloads.
-*   **Multilingual:** Functionality to switch the content language between Spanish and English.
-*   **Technologies Used:** HTML5, CSS3 (with Flexbox for layout), and Vanilla JavaScript for interactivity.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/saulmrto/saulmrto.github.io.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd saulmrto.github.io
+    ```
+3.  **Open `index.html` in your browser:**
+    You can simply open the `index.html` file directly in any web browser to view the website.
 
-**URL:** https://saulmrto.github.io/
+## 📄 License
 
-### 2. Linktree (`linktree.html`)
+This project is open source. Feel free to use the code as a reference.
 
-A dedicated page to consolidate important links in one accessible place.
-
-**Features (Linktree):**
-
-*   Profile picture and name for easy identification.
-*   Direct links to my Personal Portfolio, GitHub, and LinkedIn.
-*   Visually appealing dark theme with a background image.
-*   Responsive design, ensuring it looks great on any device.
-*   **Technologies Used:** HTML5, CSS3.
-
-**URL:** https://saulmrto.github.io/linktree.html
-
-## View Live
-
-You can visit the pages directly at:
-
-*   **Portfolio:** https://saulmrto.github.io/
-*   **Linktree:** https://saulmrto.github.io/linktree.html
-
-## Contact
-
-Saúl Morato - LinkedIn
+---
