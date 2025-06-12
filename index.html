@@ -1,13 +1,368 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para diseño responsivo -->
-    <title>Saúl Morato - Portafolio</title> <!-- Título de la pestaña -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres del documento como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración del viewport para un diseño adaptable (responsive) -->
+    <title>Saúl Morato - Portafolio</title> <!-- Título que se visualizará en la pestaña del navegador -->
+    <style>
+        /* Estilos Fundamentales: Reseteo de estilos por defecto y definición de la tipografía base para todo el sitio. */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; 
+            font-family: 'Arial', sans-serif; 
+            color: #333; 
+        }
+
+        /* Header: Definición de estilos para el encabezado fijo que permanece visible en la parte superior. */
+        header {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px; 
+            z-index: 1000;
+            box-sizing: border-box;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            position: relative; 
+        }
+
+        /* Navegación principal dentro del header */
+        header nav {
+            /* Nota de Diseño (Header Nav): El centrado de este elemento 'nav' es manejado por las propiedades flexbox de su contenedor 'header'. */
+        }
+
+        /* Lista de enlaces de navegación */
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center; 
+        }
+
+        /* Elementos de la lista de navegación (enlaces) */
+        header nav ul li {
+            display: inline-block; 
+            margin: 0 20px; 
+        }
+
+        /* Estilo de los enlaces de navegación */
+        header nav ul li a {
+            text-decoration: none;
+            color: white; 
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #cccccc; 
+        }
+
+        /* Estructura Base de Secciones: Define el layout y comportamiento común para todas las secciones de página completa. */
+        .page-section {
+            height: 100vh; 
+            width: 100vw; 
+            position: fixed; 
+            top: 0;
+            left: 0;
+            display: none; /* Comportamiento de Secciones: Inicialmente ocultas; su visibilidad es controlada dinámicamente por JavaScript. */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            overflow: hidden; 
+            z-index: 50; /* Capas (z-index): Se asegura que las secciones se rendericen detrás del encabezado. */
+        }
+
+        /* Visibilidad de Sección: Clase para mostrar la sección que está activa actualmente. */
+        .page-section.active-section {
+            display: flex; 
+        }
+
+        /* Sección Específica: Inicio */
+        section#inicio {
+            background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;    
+        }
+
+        /* Contenido Hero (Inicio): Estilos para el bloque de presentación en la sección de inicio. */
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.7); 
+            padding: 30px 40px;
+            border-radius: 10px;
+            max-width: 800px; 
+        }
+
+        /* Título Principal (Hero): Estilo del encabezado H1 en la sección de inicio. */
+        .hero-content h1 {
+            font-size: 3em;
+            color: white; 
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+        }
+
+        /* Párrafo de Presentación (Hero): Estilo del texto introductorio en la sección de inicio. */
+        .hero-content p {
+            font-size: 1.5em;
+            color: #f0f0f0; 
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+        }
+
+        /* Sección Específica: Proyectos */
+        section#proyectos {
+            background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: #f0f0f0; 
+            padding-top: 70px; /* Ajuste de Contenido (Proyectos/Contacto): Padding superior para evitar solapamiento con el header fijo. */
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        /* Contenedor de Contenido (Secciones): Estilos para el área principal de contenido en Proyectos y Contacto. */
+        .section-content { 
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 90%;
+            padding: 20px;
+            overflow-y: auto; /* Manejo de Overflow: Permite el desplazamiento vertical si el contenido excede la altura visible del contenedor. */
+            max-height: calc(100vh - 70px); /* Cálculo de Dimensiones: La altura máxima del contenido se calcula restando la altura del header. */
+            box-sizing: border-box; 
+        }
+
+        /* Títulos de Sección (Proyectos/Contacto): Estilos para los encabezados H2. */
+        section#proyectos h2, section#contacto h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px; 
+            color: white; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+        }
+
+        /* Grid de Proyectos: Contenedor flex para organizar las tarjetas de proyecto. */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; 
+        }
+
+        /* Tarjeta de Proyecto: Estilos individuales para cada tarjeta de proyecto. */
+        .project-card {
+            background-color: rgba(0, 0, 0, 0.6); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: calc(50% - 45px); /* Layout de Proyectos (Escritorio): Las tarjetas de proyecto se organizan en dos columnas. */
+            min-width: 280px; 
+            box-sizing: border-box;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+/* Título en Tarjeta de Proyecto: Estilo para el H3 dentro de cada tarjeta. */
+        .project-card h3 {
+            font-size: 1.6em;
+            color: #85c1e9; 
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+/* Descripción en Tarjeta de Proyecto: Estilo para el párrafo descriptivo. */
+        .project-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #e0e0e0; 
+            margin-bottom: 20px;
+        }
+
+/* Enlace de Proyecto: Estilo para el botón/enlace "Ver en GitHub". */
+        .project-link {
+            display: inline-block;
+            background-color: #5dade2; 
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: #4a90e2; 
+        }
+
+/* Sección Específica: Contacto */
+        section#contacto {
+            background-image: url('https://es.gizmodo.com/app/uploads/2024/12/nueva-galaxia-telescopio-hubble.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: #f0f0f0; 
+    padding-top: 70px; /* Ajuste de Contenido (Proyectos/Contacto): Padding superior para evitar solapamiento con el header fijo. */
+            justify-content: center; 
+            align-items: center; 
+        }
+
+/* Párrafos (Contacto): Estilos para el texto en la sección de contacto. */
+        section#contacto p {
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #f0f0f0; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+        }
+
+/* Enlaces (Contacto): Estilos para los hipervínculos en la sección de contacto. */
+        section#contacto a {
+            color: #5dade2; 
+            text-decoration: none;
+        }
+
+        section#contacto a:hover {
+    color: #85c1e9; /* Interacción (Hover en Enlaces de Contacto): Cambia el color del enlace a un azul más claro al pasar el cursor. */
+        }
+
+        /* Botón de cambio de idioma (Escritorio) */
+        .lang-switcher {
+            position: absolute;
+            right: 20px; 
+            top: 50%;
+            transform: translateY(-50%); 
+        }
+
+/* Botón de Idioma: Estilos generales para el botón de cambio de idioma. */
+        .lang-switcher button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 3px;
+            font-size: 0.9em; 
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .lang-switcher button:hover {
+            background-color: white;
+            color: black;
+        }
+
+/* Media Query: Ajustes para dispositivos móviles (pantallas de 768px o menos). */
+        @media (max-width: 768px) {
+            /* Header en móviles */
+            header {
+                padding: 10px 15px; 
+            }
+            /* Navegación en móviles */
+            header nav {
+                margin-bottom: 0; 
+                width: 100%; 
+            }
+            /* Elementos de navegación en móviles */
+            header nav ul li {
+                margin: 0 10px; 
+            }
+            /* Enlaces de navegación en móviles */
+            header nav ul li a {
+                font-size: 1em; 
+            }
+
+            /* Botón de idioma como footer fijo en móviles */
+            .lang-switcher {
+                position: fixed;    
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.85); 
+                padding: 8px 0;     
+                text-align: center; 
+        z-index: 999;       /* Z-index (Lang Switcher Móvil): Se posiciona debajo del header pero encima del contenido de la sección. */
+                transform: none;    
+                top: auto;          
+                right: auto;        
+            }
+            /* Botón de idioma en móviles */
+            .lang-switcher button {
+                font-size: 0.8em; 
+                padding: 4px 8px;
+            }
+
+            /* Contenido de Inicio en móviles */
+            .hero-content {
+                padding: 20px; 
+                width: 90%; 
+            }
+            /* Título principal en móviles */
+            .hero-content h1 {
+                font-size: 2.2em; 
+            }
+            /* Párrafo de presentación en móviles */
+            .hero-content p {
+                font-size: 1.1em; 
+            }
+
+            /* Contenedor de sección en móviles, ajustar altura por header y footer fijos */
+            .section-content {
+                padding: 15px; 
+        max-height: calc(100vh - 36px - 40px); /* Cálculo de Altura (Section Content Móvil): Ajusta la altura máxima considerando la altura del header y del footer de idioma. */
+            }
+
+            /* Títulos de sección en móviles */
+            section#proyectos h2, section#contacto h2 {
+                font-size: 2em; 
+                margin-bottom: 20px;
+            }
+
+            /* Tarjetas de proyecto en móviles (una por fila) */
+            .project-card {
+                width: calc(100% - 30px); 
+                margin-bottom: 20px;
+                padding: 15px; 
+            }
+            /* Título en tarjeta de proyecto (móviles) */
+            .project-card h3 {
+                font-size: 1.3em;
+            }
+            /* Párrafo en tarjeta de proyecto (móviles) */
+            .project-card p {
+                font-size: 0.95em;
+            }
+            /* Enlace en tarjeta de proyecto (móviles) */
+            .project-link {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            /* Párrafo en sección de Contacto (móviles) */
+            section#contacto p {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header> <!-- Encabezado principal -->
+    <header> <!-- Bloque principal del encabezado de la página -->
         <nav>
             <ul>
                 <li><a href="#inicio" data-translate-key="navInicio">Inicio</a></li>
@@ -16,32 +371,32 @@
             </ul>
         </nav>
         <div class="lang-switcher">
-            <button id="lang-toggle-btn" data-translate-key="langBtn">Change to English</button> <!-- Botón para cambiar idioma -->
+            <button id="lang-toggle-btn" data-translate-key="langBtn">Change to English</button> <!-- Botón destinado a la funcionalidad de cambio de idioma -->
         </div>
     </header>
 
-    <section id="inicio" class="page-section"> <!-- Sección: Inicio -->
+    <section id="inicio" class="page-section"> <!-- Sección 'Inicio': Contenido de bienvenida y presentación -->
         <div class="hero-content">
             <h1 data-translate-key="heroTitle">Saúl Morato</h1>
             <p data-translate-key="heroText">¡Hola! Soy Saúl Morato. Me apasiona el desarrollo backend y mi misión es convertirme en un desarrollador Full Stack, creando soluciones tecnológicas completas y eficientes.</p>
         </div>
     </section>
 
-    <section id="proyectos" class="page-section"> <!-- Sección: Proyectos -->
+    <section id="proyectos" class="page-section"> <!-- Sección 'Proyectos': Muestra de los proyectos desarrollados -->
         <div class="section-content">
             <h2 data-translate-key="projectsTitle">Mis Proyectos</h2>
             <div class="projects-grid">
-                <div class="project-card"> <!-- Tarjeta de Proyecto 1 -->
+                <div class="project-card"> <!-- Detalles del Proyecto 1 presentados en una tarjeta -->
                     <h3 data-translate-key="project1Title">POP3 Mail Downloader</h3>
                     <p data-translate-key="project1Desc">Una herramienta desarrollada en Python para descargar correos electrónicos desde servidores POP3, ideal para backups o procesamiento local.</p>
                     <a href="https://github.com/saulmrto/pop3mail-downloader" target="_blank" rel="noopener noreferrer" class="project-link" data-translate-key="project1Link">Ver en GitHub</a>
                 </div>
-                <div class="project-card"> <!-- Tarjeta de Proyecto 2 -->
+                <div class="project-card"> <!-- Detalles del Proyecto 2 presentados en una tarjeta -->
                     <h3 data-translate-key="project2Title">MailEML Viewer</h3>
                     <p data-translate-key="project2Desc">Una aplicación Python con interfaz gráfica (Tkinter) para visualizar el contenido de archivos de correo electrónico en formato .EML.</p>
                     <a href="https://github.com/saulmrto/maileml-viewer" target="_blank" rel="noopener noreferrer" class="project-link" data-translate-key="project2Link">Ver en GitHub</a>
                 </div>
-                <!-- Aquí puedo añadir más tarjetas de proyectos si es necesario -->
+                <!-- Nota Personal: Considerar añadir más proyectos aquí en el futuro. -->
             </div>
         </div>
     </section>
@@ -51,11 +406,11 @@
             <h2 data-translate-key="contactTitle">Contacto</h2>
             <p data-translate-key="contactText1">Puedes encontrarme en LinkedIn o enviarme un correo electrónico.</p>
             <p><a href="https://www.linkedin.com/in/saulmrto" target="_blank" rel="noopener noreferrer" data-translate-key="contactLinkText">LinkedIn: saulmrto</a></p>
-            <!-- Ejemplo: <p>Puedes contactarme en <a href="mailto:tuemail@example.com">tuemail@example.com</a>.</p> -->
+            <!-- Ejemplo (actualmente comentado) de cómo añadir un enlace de correo directo -->
         </div>
     </section>
 
-    <script> // Script para la navegación entre secciones y cambio de idioma
+    <script> // Lógica Central del Script: Encargado de la navegación SPA (Single Page Application) y la funcionalidad de internacionalización (i18n).
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('header nav ul li a');
             const pageSections = document.querySelectorAll('.page-section');
@@ -115,13 +470,13 @@
                         element.textContent = translations[lang][key];
                     }
                 });
-                // Actualizar el texto del botón específicamente, ya que ahora también tiene una clave de traducción
+                // Actualiza el texto del botón de cambio de idioma para reflejar el idioma actual.
                 if (translations[lang] && translations[lang].langBtn) {
-                    langToggleButton.textContent = translations[lang].langBtn; // Actualiza texto del botón de idioma
+                    langToggleButton.textContent = translations[lang].langBtn; // Asigna el texto traducido correspondiente.
                 }
             }
 
-            document.getElementById('inicio').classList.add('active-section'); // Activa la sección de inicio por defecto
+            document.getElementById('inicio').classList.add('active-section'); // Estado Inicial: Al cargar el DOM, se establece la sección 'inicio' como la activa por defecto.
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
@@ -136,7 +491,7 @@
                 currentLang = (currentLang === 'es') ? 'en' : 'es';
                 applyTranslations(currentLang);
             });
-            applyTranslations(currentLang); // Aplicar traducciones iniciales
+            applyTranslations(currentLang); // Carga Inicial de Traducciones: Aplica el conjunto de traducciones por defecto (español) al cargar la página.
         });
     </script>
 </body>
