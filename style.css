@@ -16,3 +16,9 @@ a {
 #nyan-gif {
     visibility: hidden;
 }
+
+#maybep {
+    font-style: italic;
+    color: gray;
+    font-size: 13px;
+}
