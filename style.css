@@ -1,4 +1,18 @@
 body {
     background-color: black;
-    color: white;
+    color:rgba(0, 255, 255, 0.918);
+    font-size: 20px;
+}
+
+main {
+    text-align: center;
+}
+
+a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+#nyan-gif {
+    visibility: hidden;
 }
