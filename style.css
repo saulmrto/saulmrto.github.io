@@ -9,16 +9,9 @@ main {
 }
 
 a {
-    color: blueviolet;
-    text-decoration: none;
+    color: rgba(0, 255, 255, 0.918);
 }
 
 #nyan-gif {
     visibility: hidden;
-}
-
-#maybep {
-    font-style: italic;
-    color: gray;
-    font-size: 13px;
 }
