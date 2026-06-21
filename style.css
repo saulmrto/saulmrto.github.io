@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color:rgba(0, 255, 255, 0.918);
+    background-color: #121212;
+    color: #E0E0E0;
     font-size: 20px;
 }
 
@@ -9,7 +9,7 @@ main {
 }
 
 a {
-    color: rgba(0, 255, 255, 0.918);
+    color: #4DA3FF;
 }
 
 #nyan-gif {
