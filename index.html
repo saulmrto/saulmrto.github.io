@@ -1,30 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saúl Morato</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111310">
+  <meta name="description" content="Soy Saúl Morato. Programo en HTML y CSS y estoy aprendiendo a usar la inteligencia artificial para trabajar.">
+  <title>Saúl Morato — Portafolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111310'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23d4fa87'%3Es%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:dark;--bg:#111310;--fg:#f0f0e8;--muted:#acb0a4;--accent:#d4fa87;--line:#363a30;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--fg)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:2rem}body{margin:0}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--accent);outline-offset:8px}::selection{background:var(--accent);color:var(--bg)}.wrap{max-width:1440px;margin:auto;padding:0 clamp(24px,6vw,96px)}
+    header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:30px 0;border-bottom:1px solid var(--line)}.logo{font-size:22px;font-weight:700;letter-spacing:-1px}.logo span{color:var(--accent)}nav{display:flex;gap:30px;font-size:14px}nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+    .hero{padding:66px 0 55px;position:relative}.eyebrow,.number,.tag,.section-label,footer{font-family:'Courier New',monospace}.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;gap:16px;color:var(--muted)}.eyebrow span:last-child{color:var(--accent)}h1{font-size:clamp(70px,13.6vw,190px);line-height:.91;letter-spacing:-.075em;font-weight:500;margin:44px 0 40px}h1 span{display:block;color:var(--accent)}.hero-bottom{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:32px}.intro{font-size:clamp(20px,2.1vw,29px);line-height:1.45;max-width:550px;margin:0;letter-spacing:-.025em}.intro em{font-style:normal;color:var(--muted)}.jump{justify-self:end;display:flex;gap:40px;align-items:center;border-bottom:1px solid var(--muted);padding:14px 0;font-size:14px}.jump:hover{color:var(--accent);border-color:var(--accent)}.jump span{font-size:24px}
+    section{border-top:1px solid var(--line);padding:48px 0 64px}.section-label{display:flex;gap:16px;align-items:center;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin:0 0 32px}.number{color:var(--accent)}.about{display:grid;grid-template-columns:1fr 1.5fr;gap:64px}h2{font-size:clamp(32px,4vw,55px);font-weight:400;letter-spacing:-.045em;line-height:1.08;margin:0}h2 span{color:var(--muted)}.skills{border-top:1px solid var(--line)}.skill{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}.skill strong{font-size:22px;font-weight:400;letter-spacing:-.04em}.skill p{margin:0;color:var(--muted);font-size:16px;line-height:1.6}.projects-heading{display:flex;justify-content:space-between;align-items:baseline;gap:25px}.tag{color:var(--muted);font-size:13px}.empty{margin-top:32px;border:1px solid var(--line);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:#171a14}.empty-mark{font-size:clamp(60px,8vw,108px);letter-spacing:-.09em;font-family:'Courier New',monospace;color:#6e8057;line-height:1}.empty h3{font-weight:400;font-size:24px;letter-spacing:-.035em;margin:0 0 12px}.empty p{font-size:16px;color:var(--muted);line-height:1.7;max-width:390px;margin:0}footer{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding:25px 0 32px;font-size:12px;color:var(--muted)}footer a:hover{color:var(--accent)}
+    @media(min-width:1600px){.hero{padding-top:90px}}
+    @media(max-width:650px){header{padding:24px 0}nav{gap:20px}.hero{padding:42px 0}.eyebrow{font-size:12px;letter-spacing:1px}.eyebrow span:last-child{display:none}h1{margin:36px 0;font-size:clamp(64px,17.5vw,114px)}.hero-bottom{grid-template-columns:1fr;gap:24px}.jump{justify-self:start;gap:48px}.about{grid-template-columns:1fr;gap:30px}section{padding:32px 0 42px}.section-label{margin-bottom:24px}.skill{grid-template-columns:65px 1fr;gap:16px}.projects-heading{align-items:start;flex-direction:column;gap:12px}.empty{grid-template-columns:1fr;padding:28px;gap:28px}.empty-mark{font-size:65px}footer{font-size:12px;line-height:1.7;flex-wrap:wrap}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
-<body>
+<body id="inicio">
+  <div class="wrap">
+    <header><a class="logo" href="#inicio" aria-label="Saúl Morato, inicio">Saúl Morato<span>.</span></a><nav aria-label="Navegación principal"><a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a></nav></header>
     <main>
-        <h1>Hola, soy Saúl Morato.</h1>
-        <p>Estoy aprendiendo programación web, administración de servidores Linux y música.</p>
-        <p>Puedes visitar mi GitHub en <a href="https://github.com/saulmrto">github.com/saulmrto</a> y mi canal de YouTube en <a href="https://www.youtube.com/@saulmrto">youtube.com/@saulmrto</a>.</p>
-        <br>
-        <p>Música que me inspira.</p>
-        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5qNAA39mMrhMb5o6tmSleX?utm_source=generator&si=3ee114a9a37e46f7" width="25%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <!--
-        <br>
-        <h2>Musica para que no te aburras</p>
-        <audio id="musiquita" src="src/music/4-05. Puffle Party.mp3" controls loop></audio>
-        <br>
-        <br>
-        <img id="nyan-gif" src="src/gif/nyan.gif" alt="">
-        -->
+      <div class="hero">
+        <div class="eyebrow"><span>Portafolio personal</span><span>HTML / CSS / IA</span></div>
+        <h1>Saúl<span>Morato.</span></h1>
+        <div class="hero-bottom"><p class="intro">Programacion en HTML y CSS.<br><em>Aprendiendo a usar la IA para trabajar.</em></p><a class="jump" href="#sobre-mi">Un poco sobre mí <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <section id="sobre-mi" aria-labelledby="sobre-titulo">
+        <p class="section-label"><span class="number">01</span> Sobre mí</p>
+        <div class="about"><h2 id="sobre-titulo">Código.<br>Aprendizaje.<br><span>Lo que sigue.</span></h2><div class="skills"><div class="skill"><strong>HTML</strong><p>Mi base para dar estructura a una página web.</p></div><div class="skill"><strong>CSS</strong><p>El lenguaje con el que doy estilo a la web.</p></div><div class="skill"><strong>IA</strong><p>Estoy aprendiendo a usar la inteligencia artificial para trabajar.</p></div></div></div>
+      </section>
+      <section id="proyectos" aria-labelledby="proyectos-titulo">
+        <p class="section-label"><span class="number">02</span> Portafolio</p>
+        <div class="projects-heading"><h2 id="proyectos-titulo">Espacio para lo que viene.</h2><span class="tag"></span></div>
+        <div class="empty"><div class="empty-mark" aria-hidden="true">&lt; / &gt;</div><div><h3>Aún sin proyectos formales.</h3><p>Este es el espacio para compartir mis próximos proyectos en HTML, CSS e inteligencia artificial.</p></div></div>
+      </section>
     </main>
+    <footer><span>Saúl Morato · Portafolio personal</span><a href="#inicio">Volver arriba ↑</a></footer>
+  </div>
 </body>
-<!--
-<script src="script.js"></script>
--->
 </html>
